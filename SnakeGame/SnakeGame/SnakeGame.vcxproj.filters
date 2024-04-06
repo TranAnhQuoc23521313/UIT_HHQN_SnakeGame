@@ -21,16 +21,22 @@
     <ClCompile Include="GamePlay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Snake.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+=======
+>>>>>>> main
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GamePlay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Snake.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> main
   </ItemGroup>
 </Project>

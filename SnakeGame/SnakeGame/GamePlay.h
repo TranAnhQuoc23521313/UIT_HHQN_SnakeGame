@@ -1,10 +1,10 @@
-#pragma once
+﻿#pragma once
 
-#define SCREEN_WIDTH 1820
-#define SCREEN_HEIGHT 980
-#define GRID_SIZE 30
-#define GRID_ROWS (SCREEN_HEIGHT / GRID_SIZE)
-#define GRID_COLS (SCREEN_WIDTH / GRID_SIZE)
+typedef enum {
+	SMALL,
+	MEDIUM,
+	LARGE
+} GridSize;
 
 class GamePlay
 {
@@ -12,9 +12,14 @@ private:
 	int x;
 	int y;
 	int size;
+	bool ChooseModePlay;
 public:
-	int Choose_Mode_GamePlay();
-	void Start();
+	// Cụm các hàm dùng để thiết kế nút lệnh chọn chế độ trò chơi
+	void Choose_Mode_GamePlay();
+	static void DrawChooseButtonMode();
+
+
+	void Start(int,int);
 	void DrawGrid(int,int,int);
 };
 

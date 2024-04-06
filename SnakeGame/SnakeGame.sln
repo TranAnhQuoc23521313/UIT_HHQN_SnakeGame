@@ -7,7 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "First", "First\First.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakeGame", "SnakeGame\SnakeGame.vcxproj", "{78C42F06-2383-4F18-825F-44610984191E}"
 EndProject
+<<<<<<< HEAD
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcxproj", "{D48600E5-C8C8-41BE-9E40-183F7A56EF5C}"
+=======
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestIngFunctional", "TestIngFunctional\TestIngFunctional.vcxproj", "{47DB332B-5BE4-472D-9E6C-12410DBBDF67}"
+>>>>>>> main
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,7 @@ Global
 		{78C42F06-2383-4F18-825F-44610984191E}.Release|x64.Build.0 = Release|x64
 		{78C42F06-2383-4F18-825F-44610984191E}.Release|x86.ActiveCfg = Release|Win32
 		{78C42F06-2383-4F18-825F-44610984191E}.Release|x86.Build.0 = Release|Win32
+<<<<<<< HEAD
 		{D48600E5-C8C8-41BE-9E40-183F7A56EF5C}.Debug|x64.ActiveCfg = Debug|x64
 		{D48600E5-C8C8-41BE-9E40-183F7A56EF5C}.Debug|x64.Build.0 = Debug|x64
 		{D48600E5-C8C8-41BE-9E40-183F7A56EF5C}.Debug|x86.ActiveCfg = Debug|Win32
@@ -41,6 +46,16 @@ Global
 		{D48600E5-C8C8-41BE-9E40-183F7A56EF5C}.Release|x64.Build.0 = Release|x64
 		{D48600E5-C8C8-41BE-9E40-183F7A56EF5C}.Release|x86.ActiveCfg = Release|Win32
 		{D48600E5-C8C8-41BE-9E40-183F7A56EF5C}.Release|x86.Build.0 = Release|Win32
+=======
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Debug|x64.ActiveCfg = Debug|x64
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Debug|x64.Build.0 = Debug|x64
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Debug|x86.ActiveCfg = Debug|Win32
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Debug|x86.Build.0 = Debug|Win32
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Release|x64.ActiveCfg = Release|x64
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Release|x64.Build.0 = Release|x64
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Release|x86.ActiveCfg = Release|Win32
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Release|x86.Build.0 = Release|Win32
+>>>>>>> main
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
