@@ -1,5 +1,6 @@
 ﻿#include "GamePlay.h"
 #include <raylib.h>
+#include"Snake.h"
 
 #define CHOOSE_SCREEN_WIDTH 560
 #define CHOOSE_SCREEN_HEIGHT 280
@@ -97,11 +98,23 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     int GRID_ROWS = SCREEN_HEIGHT / GRID_SIZE;
     int GRID_COLS = SCREEN_WIDTH / GRID_SIZE;
 
+    Snake snake(GRID_SIZE / 2, GRID_SIZE / 2);//chinh sua
+    char key;
+
     while (!WindowShouldClose()) {
+        if (_kbhit())//chinh sua
+        {
+            key = _getch();
+            snake.SetDirection(key);
+
+        }
+        snake.Move();
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
         GamePlay::DrawGrid(GRID_ROWS, GRID_COLS, GRID_SIZE);
+
+        snake.Draw(GRID_SIZE);//chinh sua
 
         EndDrawing();
     }

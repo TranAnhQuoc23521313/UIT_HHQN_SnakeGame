@@ -1,10 +1,10 @@
 ﻿  testingprogram.cpp
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(185,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(185,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(186,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(186,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(187,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(187,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  TestIngFunctional.vcxproj -> C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\x64\Debug\TestIngFunctional.exe
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(185,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(185,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(186,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(186,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(187,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\testingprogram.cpp(187,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  TestIngFunctional.vcxproj -> E:\code game\UIT_HHQN_SnakeGame\SnakeGame\x64\Debug\TestIngFunctional.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
