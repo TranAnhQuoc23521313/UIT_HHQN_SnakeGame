@@ -10,7 +10,7 @@
 - I obligated the acts that push the config into Main project. Any explainations for the mistake won't be accept for any reason
 - When you config code, after pushing into the branch, you have been responsible for announce Leader to check it by using Slack and click done in Trello if that act is a mission given by leader.
 
-# Guide to contribute into the branch project.
+# Guide to contribute into the project by branch.
 - First you have to install GitHub Desktop or Git ( if you are a professional )
 - Then clone the repository with this link https://github.com/TranAnhQuoc23521313/UIT_HHQN_SnakeGame.git
 - You can set the locate file anywhere in your device but I think you should set locate file in default
