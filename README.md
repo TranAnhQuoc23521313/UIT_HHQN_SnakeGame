@@ -7,7 +7,7 @@
 
 # Step to work
 - Each time if you config the code, please push it into a new branch with a name typed such as <Sumary your activies with some words>
-- I obligated the acts that push the config into Main project. Any explainations for the mistake won't be accept for any reason
+- I obligate the acts that push the config into Main project. Any explainations for the mistake won't be accept for any reason
 - When you config code, after pushing into the branch, you have been responsible for announce Leader to check it by using Slack and click done in Trello if that act is a mission given by leader.
 
 # Guide to contribute into the project by branch.
