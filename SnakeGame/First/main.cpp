@@ -18,7 +18,7 @@ int main() {
     cout << "Hello World" << endl;
 
     InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
-    SetTargetFPS(60);
+    SetTargetFPS(120);
 
     while (WindowShouldClose() == false) {
         BeginDrawing();

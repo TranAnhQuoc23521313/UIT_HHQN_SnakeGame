@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "First", "First\First.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakeGame", "SnakeGame\SnakeGame.vcxproj", "{78C42F06-2383-4F18-825F-44610984191E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestIngFunctional", "TestIngFunctional\TestIngFunctional.vcxproj", "{47DB332B-5BE4-472D-9E6C-12410DBBDF67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{78C42F06-2383-4F18-825F-44610984191E}.Release|x64.Build.0 = Release|x64
 		{78C42F06-2383-4F18-825F-44610984191E}.Release|x86.ActiveCfg = Release|Win32
 		{78C42F06-2383-4F18-825F-44610984191E}.Release|x86.Build.0 = Release|Win32
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Debug|x64.ActiveCfg = Debug|x64
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Debug|x64.Build.0 = Debug|x64
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Debug|x86.ActiveCfg = Debug|Win32
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Debug|x86.Build.0 = Debug|Win32
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Release|x64.ActiveCfg = Release|x64
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Release|x64.Build.0 = Release|x64
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Release|x86.ActiveCfg = Release|Win32
+		{47DB332B-5BE4-472D-9E6C-12410DBBDF67}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
