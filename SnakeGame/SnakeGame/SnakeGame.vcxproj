@@ -128,10 +128,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GamePlay.cpp" />
+<<<<<<< HEAD
+    <ClCompile Include="Snake.cpp" />
+=======
+>>>>>>> main
     <ClCompile Include="SnakeGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GamePlay.h" />
+<<<<<<< HEAD
+    <ClInclude Include="Snake.h" />
+=======
+>>>>>>> main
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

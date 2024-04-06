@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+﻿
+=======
 ﻿  GamePlay.cpp
 C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(88,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(88,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -8,3 +11,4 @@ C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\
   SnakeGame.vcxproj -> C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\x64\Debug\SnakeGame.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
+>>>>>>> main
