@@ -1,6 +1,8 @@
 #include "GamePlay.h"
 #include <raylib.h>
 #include <iostream>
+#include"Snake.h"
+#include<conio.h>
 using namespace std;
 
 void GamePlay::Start()
@@ -9,15 +11,30 @@ void GamePlay::Start()
 
     SetTargetFPS(60);
 
+    Snake snake(GRID_SIZE / 2, GRID_SIZE / 2); 
+
+    char key;
+
     while (!WindowShouldClose()) {
+        if (_kbhit())
+        {
+            key = _getch();
+            snake.SetDirection(key);
+
+        }
+        snake.Move();
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
         GamePlay::DrawGrid(GRID_ROWS, GRID_COLS, GRID_SIZE);
 
-        EndDrawing();
-    }
+        
+        snake.Draw(GRID_SIZE);
 
+        
+        EndDrawing();   
+        
+    }
     CloseWindow();
 }
 
