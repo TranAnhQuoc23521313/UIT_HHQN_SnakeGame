@@ -23,4 +23,8 @@
 
 -------------------------------------------------------------
 # This part is for writing your update here.
-6/4/2024: Create the project _ UIT.Anh Quốc
+# _6/4/2024:_ 
+- Trần Anh Quốc: Thiết kế giao diện, tạo ra 3 chế độ chơi Small _ Medium _ Large ứng với 3 kích cỡ khác nhau, tất cả nằm trong lớp GamePlay.
+- Nguyễn Việt Nguyên: Xây dựng Lớp snake với các chức năng sau: Di chuyển về vị trí đầu biên trước khi chạm vào biên sau, di chuyển bằng 4 nút mũi tên.
+- Nguyên Công Hậu: None
+- Nguyễn Việt Hùng: None
