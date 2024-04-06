@@ -1,6 +1,6 @@
 ﻿#include "GamePlay.h"
 #include <raylib.h>
-#include"Snake.h"
+#include "Snake.h"
 
 #define CHOOSE_SCREEN_WIDTH 560
 #define CHOOSE_SCREEN_HEIGHT 280
@@ -52,18 +52,21 @@ void GamePlay::Choose_Mode_GamePlay()
                 buttonsVisible = false; // Ẩn các nút sau khi nút đã được nhấn
                 HEIGHT_GAME_SCREEN = 560;
                 WIDTH_GAME_SCREEN = 720;
+                break;
             }
             else if (CheckCollisionPointRec(GetMousePosition(), mediumButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                 currentGridSize = MEDIUM;
                 buttonsVisible = false;
                 HEIGHT_GAME_SCREEN = 720;
                 WIDTH_GAME_SCREEN = 1280;
+                break;
             }
             else if (CheckCollisionPointRec(GetMousePosition(), largeButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                 currentGridSize = LARGE;
                 buttonsVisible = false;
                 HEIGHT_GAME_SCREEN = 980;
                 WIDTH_GAME_SCREEN = 1820;
+                break;
             }
         }
 
@@ -93,28 +96,36 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 {
     SetWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 
-    SetTargetFPS(60);
+    //SetTargetFPS(8);
 
-    int GRID_ROWS = SCREEN_HEIGHT / GRID_SIZE;
-    int GRID_COLS = SCREEN_WIDTH / GRID_SIZE;
-
-    Snake snake(GRID_SIZE / 2, GRID_SIZE / 2);//chinh sua
-    char key;
-
+    int GRID_ROWS_SCREEN = SCREEN_HEIGHT / GRID_SIZE;
+    int GRID_COLS_SCREEN = SCREEN_WIDTH / GRID_SIZE;
+    int FrameCount = 8;
+   
+    //Snake::GRID_COLS = GRID_COLS_SCREEN;
+    //Snake::GRID_ROWS = GRID_ROWS_SCREEN;
+    Snake snake(GRID_COLS_SCREEN / 2, GRID_ROWS_SCREEN / 2, 1, 0);
     while (!WindowShouldClose()) {
-        if (_kbhit())//chinh sua
-        {
-            key = _getch();
-            snake.SetDirection(key);
-
-        }
-        snake.Move();
         BeginDrawing();
         ClearBackground(RAYWHITE);
+        SetTargetFPS(FrameCount);
+        if (IsKeyPressed(KEY_RIGHT)) {
+            snake.ChangeDirection(1, 0); // Thay đổi hướng sang phải
+        }
+        else if (IsKeyPressed(KEY_LEFT)) {
+            snake.ChangeDirection(-1, 0); // Thay đổi hướng sang trái
+        }
+        else if (IsKeyPressed(KEY_UP)) {
+            snake.ChangeDirection(0, -1); // Thay đổi hướng lên trên
+        }
+        else if (IsKeyPressed(KEY_DOWN)) {
+            snake.ChangeDirection(0, 1); // Thay đổi hướng xuống dưới
+        }
 
-        GamePlay::DrawGrid(GRID_ROWS, GRID_COLS, GRID_SIZE);
+        snake.Move(GRID_COLS_SCREEN, GRID_ROWS_SCREEN,FrameCount); // Di chuyển con rắn
+        snake.Draw(); // Vẽ con rắn
 
-        snake.Draw(GRID_SIZE);//chinh sua
+        GamePlay::DrawGrid(GRID_ROWS_SCREEN, GRID_COLS_SCREEN, GRID_SIZE);
 
         EndDrawing();
     }

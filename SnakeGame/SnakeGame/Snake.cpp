@@ -1,61 +1,63 @@
-#include "Snake.h"
-#include <raylib.h>
-#include <iostream>
-#include <conio.h>
-using namespace std;
+﻿#include "Snake.h"
+#include <vector>
 
-void Snake::Move()
+Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDirX), dy(startDirY)
 {
-    static int frameCount = 0;
-    const int moveSpeed = 10;
+    Point head = { startX, startY };
+    body.push_back(head);
+}
 
-    if (frameCount >= moveSpeed) {
-        for (int i = SNAKE_LENGTH - 1; i > 0; --i) {
-            segments[i] = segments[i - 1];
-        }
-        segments[0].x += this->directionX;
-        segments[0].y += this->directionY;
+void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount)
+{
+    // Lấy vị trí của phần đầu của con rắn
+    Point head = body[0];
 
-        frameCount = 0;
+    // Tạo một vị trí mới dựa trên hướng di chuyển
+    Point newHead = { head.x + dx, head.y + dy };
+
+    // Đặt lại vị trí mới nếu vượt ra khỏi biên
+    if (newHead.x < 0)
+    {
+        newHead.x = GRID_COLS - 1;
+        FrameCount++;
     }
-    else {
-        frameCount++;
+    if (newHead.y < 0)
+    {
+        newHead.y = GRID_ROWS - 1;
+        FrameCount++;
+    }
+    if (newHead.x >= GRID_COLS)
+    {
+        newHead.x = 0;
+        FrameCount++;
+    }
+    if (newHead.y >= GRID_ROWS)
+    {
+        newHead.y = 0;
+        FrameCount++;
+    }
+
+    // Thêm vị trí mới vào phần đầu của con rắn
+    body.insert(body.begin(), newHead);
+
+    // Xoá phần cuối của con rắn
+    body.pop_back();
+}
+
+void Snake::Draw()
+{
+    for (Point part : body)
+    {
+        DrawRectangle(part.x * GRID_SIZE, part.y * GRID_SIZE, GRID_SIZE, GRID_SIZE, GREEN);
     }
 }
 
-void Snake::Draw(int cellSize) {
-    for (int i = 0; i < SNAKE_LENGTH; ++i) {
-        DrawRectangle(segments[i].x * cellSize, segments[i].y * cellSize, cellSize, cellSize, RED);
-    }
-}
-
-void Snake::SetDirection(char key)
+void Snake::ChangeDirection(int newDx, int newDy)
 {
-    switch (key) {
-    case 's':
-        if (directionY != 1) {
-            directionX = 0;
-            directionY = -1;
-        }
-        std::cout << key;
-        break;
-    case 'a':
-        if (directionX != 1) {
-            directionX = -1;
-            directionY = 0;
-        }
-        break;
-    case 'w':
-        if (directionY != -1) {
-            directionX = 0;
-            directionY = 1;
-        }
-        break;
-    case 'd':
-        if (directionX != -1) {
-            directionX = 1;
-            directionY = 0;
-        }
-        break;
+    // Chỉ cho phép thay đổi hướng nếu không trái chiều với hướng hiện tại
+    if ((dx != 0 && newDx != -dx) || (dy != 0 && newDy != -dy))
+    {
+        dx = newDx;
+        dy = newDy;
     }
 }

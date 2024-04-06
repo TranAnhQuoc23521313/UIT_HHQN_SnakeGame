@@ -1,28 +1,24 @@
-#pragma once
+﻿#pragma once
 #include <raylib.h>
-#include<conio.h>
+#include <vector>
 
-const int SNAKE_LENGTH = 2;
+#define GRID_SIZE 30
+//#define GRID_ROWS 20
+//#define GRID_COLS 20
 
-class Snake
-{
+typedef struct {
+    int x;
+    int y;
+} Point;
+
+class Snake {
 private:
-    struct Vector2 {
-        int x, y;
-    };
-    Vector2 segments[SNAKE_LENGTH];
-    int directionX, directionY;
+    std::vector<Point> body;
+    int dx; // Hướng di chuyển theo trục X
+    int dy; // Hướng di chuyển theo trục Y
 public:
-    Snake(int startX, int startY) {
-        segments[0] = { startX, startY };
-        segments[1] = { startX - 1, startY };
-        directionX = 1;
-        directionY = 0;
-    }
-    void Move();
-    void Draw(int);
-    void SetDirection(char);
+    Snake(int, int , int , int );
+    void Move(int,int,int&);
+    void Draw();
+    void ChangeDirection(int , int);
 };
-
-
-
