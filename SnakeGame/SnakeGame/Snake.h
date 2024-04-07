@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <raylib.h>
 #include <vector>
+#include"meat.h"
 
 #define GRID_SIZE 30
 //#define GRID_ROWS 20
@@ -18,7 +19,9 @@ private:
     int dy; // Hướng di chuyển theo trục Y
 public:
     Snake(int, int , int , int );
-    void Move(int,int,int&);
+    void Move(int,int,int&,meat&);
     void Draw();
     void ChangeDirection(int , int);
+    bool CheckSelfCollision() const;
+    friend class GamePlay;
 };
