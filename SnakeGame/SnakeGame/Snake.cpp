@@ -2,10 +2,12 @@
 #include"meat.h"
 #include"GamePlay.h"
 #include <vector>
+#include <string>
 
 Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDirX), dy(startDirY)
 {
     Point head = { startX, startY };
+    this->score = 0;
     body.push_back(head);
 }
 
@@ -21,22 +23,22 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
     if (newHead.x < 0)
     {
         newHead.x = GRID_COLS - 1;
-        FrameCount++;
+        //FrameCount++;
     }
     if (newHead.y < 0)
     {
         newHead.y = GRID_ROWS - 1;
-        FrameCount++;
+       // FrameCount++;
     }
     if (newHead.x >= GRID_COLS)
     {
         newHead.x = 0;
-        FrameCount++;
+       // FrameCount++;
     }
     if (newHead.y >= GRID_ROWS)
     {
         newHead.y = 0;
-        FrameCount++;
+       // FrameCount++;
     }
 
     if (newHead.x == MEAT.GetPosition().x && newHead.y == MEAT.GetPosition().y) {
@@ -46,7 +48,8 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
         // Tạo một miếng thịt mới
         MEAT.SetRandomPosition(GRID_COLS, GRID_ROWS);
         MEAT.ResetExistenceTime();
-        GamePlay::DrawScore();
+        this->score += 10;
+        this->DrawScore();
     }
     
     else 
@@ -55,6 +58,12 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
 
         // Xoá phần cuối của con rắn
         body.pop_back();
+    }
+
+    if (this->score % 50 == 0 && this->old_speed != this->Speed)
+    {
+        this->old_speed = this->Speed;
+        this->Speed += 1;
     }
 }
 
@@ -88,4 +97,11 @@ bool Snake::CheckSelfCollision() const
         }
     }
     return false; // Trả về false nếu không có va chạm
+}
+void Snake::DrawScore() {
+    // Vẽ điểm số bên góc phải của màn hình
+    std::string scoreText = "Score: " + std::to_string(this->score);
+    const char* scoreChar = scoreText.c_str(); // Chuyển đổi thành một con trỏ char
+
+    DrawText(scoreChar, this->SCC_WIDTH  - 150, 20, 20, BLACK);
 }
