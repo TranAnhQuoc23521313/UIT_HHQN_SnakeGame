@@ -1,219 +1,110 @@
-﻿//#include "raylib.h"
-//
-//#define SCREEN_WIDTH 800
-//#define SCREEN_HEIGHT 450
-//
-//#define SMALL_GRID_SIZE 10
-//#define MEDIUM_GRID_SIZE 20
-//#define LARGE_GRID_SIZE 30
-//
-//typedef enum {
-//    SMALL,
-//    MEDIUM,
-//    LARGE
-//} GridSize;
-//
-//Rectangle smallButton = { 20, 20, 100, 40 };
-//Rectangle mediumButton = { 140, 20, 100, 40 };
-//Rectangle largeButton = { 260, 20, 100, 40 };
-//
-//bool buttonsVisible = true; // Biến để theo dõi trạng thái hiển thị của các nút
-//GridSize currentGridSize = MEDIUM;
-//
-//void DrawGrid(int cellSize) {
-//    int rows = SCREEN_HEIGHT / cellSize;
-//    int cols = SCREEN_WIDTH / cellSize;
-//
-//    for (int i = 0; i < rows; i++) {
-//        for (int j = 0; j < cols; j++) {
-//            int x = j * cellSize;
-//            int y = i * cellSize;
-//            DrawRectangle(x, y, cellSize, cellSize, SKYBLUE);
-//            DrawRectangleLines(x, y, cellSize, cellSize, BLACK);
-//        }
-//    }
-//}
-//
-//void DrawButtons() {
-//    if (buttonsVisible) { // Chỉ vẽ nút khi biến buttonsVisible là true
-//        DrawRectangleRec(smallButton, LIGHTGRAY);
-//        DrawRectangleRec(mediumButton, LIGHTGRAY);
-//        DrawRectangleRec(largeButton, LIGHTGRAY);
-//
-//        DrawText("Small", smallButton.x + 10, smallButton.y + 10, 20, BLACK);
-//        DrawText("Medium", mediumButton.x + 10, mediumButton.y + 10, 20, BLACK);
-//        DrawText("Large", largeButton.x + 10, largeButton.y + 10, 20, BLACK);
-//    }
-//}
-//
-//int main(void) {
-//    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Grid Example");
-//
-//    SetTargetFPS(60);
-//
-//    while (!WindowShouldClose()) {
-//        BeginDrawing();
-//        ClearBackground(RAYWHITE);
-//
-//        if (!buttonsVisible) { // Nếu buttonsVisible là false, chỉ hiển thị lưới
-//            if (currentGridSize == SMALL) {
-//                DrawGrid(SMALL_GRID_SIZE);
-//            }
-//            else if (currentGridSize == MEDIUM) {
-//                DrawGrid(MEDIUM_GRID_SIZE);
-//            }
-//            else if (currentGridSize == LARGE) {
-//                DrawGrid(LARGE_GRID_SIZE);
-//            }
-//        }
-//
-//        DrawButtons();
-//
-//        if (buttonsVisible) { // Kiểm tra nút nào được nhấn và cập nhật kích thước lưới
-//            if (CheckCollisionPointRec(GetMousePosition(), smallButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-//                currentGridSize = SMALL;
-//                buttonsVisible = false; // Ẩn các nút sau khi nút đã được nhấn
-//            }
-//            else if (CheckCollisionPointRec(GetMousePosition(), mediumButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-//                currentGridSize = MEDIUM;
-//                buttonsVisible = false;
-//            }
-//            else if (CheckCollisionPointRec(GetMousePosition(), largeButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-//                currentGridSize = LARGE;
-//                buttonsVisible = false;
-//            }
-//        }
-//
-//        EndDrawing();
-//    }
-//
-//    CloseWindow();
-//
-//    return 0;
-//}
+﻿/*******************************************************************************************
+*
+*   raylib [text] example - raylib fonts loading
+*
+*   NOTE: raylib is distributed with some free to use fonts (even for commercial pourposes!)
+*         To view details and credits for those fonts, check raylib license file
+*
+*   Example originally created with raylib 1.7, last time updated with raylib 3.7
+*
+*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,
+*   BSD-like license that allows static linking with closed source software
+*
+*   Copyright (c) 2017-2024 Ramon Santamaria (@raysan5)
+*
+********************************************************************************************/
+
 #include "raylib.h"
 
-#define CHOOSE_SCREEN_WIDTH 560
-#define CHOOSE_SCREEN_HEIGHT 280
-#define GRID_SIZE 30
+#define MAX_FONTS   8
 
-typedef enum {
-    SMALL,
-    MEDIUM,
-    LARGE
-} GridSize;
+//------------------------------------------------------------------------------------
+// Program main entry point
+//------------------------------------------------------------------------------------
+int main(void)
+{
+    // Initialization
+    //--------------------------------------------------------------------------------------
+    const int screenWidth = 800;
+    const int screenHeight = 450;
 
-class GamePlay {
-public:
-    static void Choose_Mode_GamePlay() {
-        InitWindow(CHOOSE_SCREEN_WIDTH, CHOOSE_SCREEN_HEIGHT, "SNAKE GAME");
+    InitWindow(screenWidth, screenHeight, "raylib [text] example - raylib fonts");
 
-        SetTargetFPS(60);
+    // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
+    Font fonts[MAX_FONTS] = { 0 };
 
-        bool openNewWindow = false;
+    fonts[0] = LoadFont("resources/fonts/alagard.png");
+    fonts[1] = LoadFont("resources/fonts/pixelplay.png");
+    fonts[2] = LoadFont("resources/fonts/mecha.png");
+    fonts[3] = LoadFont("resources/fonts/setback.png");
+    fonts[4] = LoadFont("resources/fonts/romulus.png");
+    fonts[5] = LoadFont("resources/fonts/pixantiqua.png");
+    fonts[6] = LoadFont("resources/fonts/alpha_beta.png");
+    fonts[7] = LoadFont("resources/fonts/jupiter_crash.png");
 
-        while (!WindowShouldClose()) {
-            BeginDrawing();
-            ClearBackground(RAYWHITE);
+    const char* messages[MAX_FONTS] = { "ALAGARD FONT designed by Hewett Tsoi",
+                                "PIXELPLAY FONT designed by Aleksander Shevchuk",
+                                "MECHA FONT designed by Captain Falcon",
+                                "SETBACK FONT designed by Brian Kent (AEnigma)",
+                                "ROMULUS FONT designed by Hewett Tsoi",
+                                "PIXANTIQUA FONT designed by Gerhard Grossmann",
+                                "ALPHA_BETA FONT designed by Brian Kent (AEnigma)",
+                                "JUPITER_CRASH FONT designed by Brian Kent (AEnigma)" };
 
-            if (!openNewWindow) {
-                if (currentGridSize == SMALL) {
-                    CloseWindow();
-                    GamePlay::Start(720, 560);
-                    openNewWindow = true;
-                }
-                else if (currentGridSize == MEDIUM) {
-                    CloseWindow();
-                    GamePlay::Start(1280, 720);
-                    openNewWindow = true;
-                }
-                else if (currentGridSize == LARGE) {
-                    CloseWindow();
-                    GamePlay::Start(1820, 980);
-                    openNewWindow = true;
-                }
-            }
+    const int spacings[MAX_FONTS] = { 2, 4, 8, 4, 3, 4, 4, 1 };
 
-            GamePlay::DrawChooseButtonMode();
+    Vector2 positions[MAX_FONTS] = { 0 };
 
-            if (buttonsVisible) {
-                if (CheckCollisionPointRec(GetMousePosition(), smallButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                    currentGridSize = SMALL;
-                    buttonsVisible = false;
-                }
-                else if (CheckCollisionPointRec(GetMousePosition(), mediumButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                    currentGridSize = MEDIUM;
-                    buttonsVisible = false;
-                }
-                else if (CheckCollisionPointRec(GetMousePosition(), largeButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                    currentGridSize = LARGE;
-                    buttonsVisible = false;
-                }
-            }
-
-            EndDrawing();
-        }
-        CloseWindow(); // Tắt cửa sổ SnakeGame khi kết thúc vòng lặp
-    }
-
-    static void Start(int SCREEN_WIDTH, int SCREEN_HEIGHT) {
-        InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Grid Example");
-
-        SetTargetFPS(60);
-
-        int GRID_ROWS = SCREEN_HEIGHT / GRID_SIZE;
-        int GRID_COLS = SCREEN_WIDTH / GRID_SIZE;
-
-        while (!WindowShouldClose()) {
-            BeginDrawing();
-            ClearBackground(RAYWHITE);
-
-            DrawGrid(GRID_ROWS, GRID_COLS, GRID_SIZE);
-
-            EndDrawing();
-        }
-
-        CloseWindow();
-    }
-
-    static void DrawChooseButtonMode() {
-        if (buttonsVisible) {
-            DrawRectangleRec(smallButton, LIGHTGRAY);
-            DrawRectangleRec(mediumButton, LIGHTGRAY);
-            DrawRectangleRec(largeButton, LIGHTGRAY);
-
-            DrawText("Small", smallButton.x + 10, smallButton.y + 10, 20, BLACK);
-            DrawText("Medium", mediumButton.x + 10, mediumButton.y + 10, 20, BLACK);
-            DrawText("Large", largeButton.x + 10, largeButton.y + 10, 20, BLACK);
-        }
-    }
-
-    static void DrawGrid(int rows, int cols, int cellSize)
+    for (int i = 0; i < MAX_FONTS; i++)
     {
-        for (int i = 0; i < rows; i++) {
-            DrawLine(0, i * cellSize, cols * cellSize, i * cellSize, LIGHTGRAY);
-        }
-        for (int j = 0; j < cols; j++) {
-            DrawLine(j * cellSize, 0, j * cellSize, rows * cellSize, LIGHTGRAY);
-        }
-
+        positions[i].x = screenWidth / 2.0f - MeasureTextEx(fonts[i], messages[i], fonts[i].baseSize * 2.0f, (float)spacings[i]).x / 2.0f;
+        positions[i].y = 60.0f + fonts[i].baseSize + 45.0f * i;
     }
 
-    static Rectangle smallButton;
-    static Rectangle mediumButton;
-    static Rectangle largeButton;
-    static GridSize currentGridSize;
-    static bool buttonsVisible;
-};
+    // Small Y position corrections
+    positions[3].y += 8;
+    positions[4].y += 2;
+    positions[7].y -= 8;
 
-Rectangle GamePlay::smallButton = { 20, 20, 100, 40 };
-Rectangle GamePlay::mediumButton = { 140, 20, 100, 40 };
-Rectangle GamePlay::largeButton = { 260, 20, 100, 40 };
-GridSize GamePlay::currentGridSize = MEDIUM;
-bool GamePlay::buttonsVisible = true;
+    Color colors[MAX_FONTS] = { MAROON, ORANGE, DARKGREEN, DARKBLUE, DARKPURPLE, LIME, GOLD, RED };
 
-int main(void) {
-    GamePlay::Choose_Mode_GamePlay();
+    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+    //--------------------------------------------------------------------------------------
+
+    // Main game loop
+    while (!WindowShouldClose())    // Detect window close button or ESC key
+    {
+        // Update
+        //----------------------------------------------------------------------------------
+        // TODO: Update your variables here
+        //----------------------------------------------------------------------------------
+
+        // Draw
+        //----------------------------------------------------------------------------------
+        BeginDrawing();
+
+        ClearBackground(RAYWHITE);
+
+        DrawText("free fonts included with raylib", 250, 20, 20, DARKGRAY);
+        DrawLine(220, 50, 590, 50, DARKGRAY);
+
+        for (int i = 0; i < MAX_FONTS; i++)
+        {
+            DrawTextEx(fonts[i], messages[i], positions[i], fonts[i].baseSize * 2.0f, (float)spacings[i], colors[i]);
+        }
+
+        EndDrawing();
+        //----------------------------------------------------------------------------------
+    }
+
+    // De-Initialization
+    //--------------------------------------------------------------------------------------
+
+    // Fonts unloading
+    for (int i = 0; i < MAX_FONTS; i++) UnloadFont(fonts[i]);
+
+    CloseWindow();                 // Close window and OpenGL context
+    //--------------------------------------------------------------------------------------
 
     return 0;
 }

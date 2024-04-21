@@ -49,6 +49,10 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
         MEAT.SetRandomPosition(GRID_COLS, GRID_ROWS);
         MEAT.ResetExistenceTime();
         this->score += 10;
+        if (this->score % 100 == 0)
+        {
+            this->Speed += 1;
+        }
         this->DrawScore();
     }
     
@@ -60,11 +64,7 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
         body.pop_back();
     }
 
-    if (this->score % 50 == 0 && this->old_speed != this->Speed)
-    {
-        this->old_speed = this->Speed;
-        this->Speed += 1;
-    }
+   
 }
 
 void Snake::Draw()

@@ -21,7 +21,6 @@ private:
     int SCC_WIDTH;
     int score;
     int Speed = 8;
-    int old_speed = 0;
 public:
     Snake(int, int , int , int );
     void Move(int,int,int&,meat&);

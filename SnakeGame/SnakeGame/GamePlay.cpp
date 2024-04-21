@@ -152,7 +152,7 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 
 
 
-        GamePlay::DrawGrid(GRID_ROWS_SCREEN, GRID_COLS_SCREEN, GRID_SIZE);
+        //GamePlay::DrawGrid(GRID_ROWS_SCREEN, GRID_COLS_SCREEN, GRID_SIZE);
 
         EndDrawing();
     }
