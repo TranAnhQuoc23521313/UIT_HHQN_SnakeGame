@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\Snake.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|solutionrelative:SnakeGame\\Snake.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\SnakeGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|solutionrelative:SnakeGame\\SnakeGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|solutionrelative:SnakeGame\\GamePlay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\Snake.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|solutionrelative:SnakeGame\\Snake.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|solutionrelative:SnakeGame\\GamePlay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\Snake.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|solutionrelative:SnakeGame\\Snake.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\meat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|solutionrelative:SnakeGame\\meat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\SnakeGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|solutionrelative:SnakeGame\\SnakeGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\Snake.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|solutionrelative:SnakeGame\\Snake.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{78C42F06-2383-4F18-825F-44610984191E}|SnakeGame\\SnakeGame.vcxproj|E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\meat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "meat.cpp",
               "DocumentMoniker": "E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\Meat.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\Meat.cpp",
@@ -56,33 +56,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Snake.cpp",
               "DocumentMoniker": "E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\Snake.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\Snake.cpp",
               "ToolTip": "E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\Snake.cpp",
               "RelativeToolTip": "SnakeGame\\Snake.cpp",
-              "ViewState": "AQIAACAAAAAAAAAAAAAuwDEAAAAFAAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAGMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-07T00:59:05.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GamePlay.cpp",
               "DocumentMoniker": "E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\GamePlay.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\GamePlay.cpp",
               "ToolTip": "E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\GamePlay.cpp",
               "RelativeToolTip": "SnakeGame\\GamePlay.cpp",
-              "ViewState": "AQIAAKIAAAAAAAAAAAAAAKcAAABMAAAA",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAAAH4AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-07T00:59:04.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "GamePlay.h",
               "DocumentMoniker": "E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\GamePlay.h",
               "RelativeDocumentMoniker": "SnakeGame\\GamePlay.h",
@@ -95,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Snake.h",
               "DocumentMoniker": "E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\Snake.h",
               "RelativeDocumentMoniker": "SnakeGame\\Snake.h",
@@ -103,8 +103,7 @@
               "RelativeToolTip": "SnakeGame\\Snake.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-07T00:59:05.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T00:59:05.069Z"
             },
             {
               "$type": "Document",
@@ -116,12 +115,11 @@
               "RelativeToolTip": "SnakeGame\\Meat.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-07T01:17:23.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T01:17:23.336Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "SnakeGame.cpp",
               "DocumentMoniker": "E:\\code game\\UIT_HHQN_SnakeGame\\SnakeGame\\SnakeGame\\SnakeGame.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\SnakeGame.cpp",
@@ -129,8 +127,7 @@
               "RelativeToolTip": "SnakeGame\\SnakeGame.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-07T00:59:05.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T00:59:05.069Z"
             }
           ]
         }

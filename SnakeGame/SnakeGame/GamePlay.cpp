@@ -113,7 +113,7 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 
     while (!WindowShouldClose()) {
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        ClearBackground(BLACK);
         SetTargetFPS(snake.GetSpeed());
         if (IsKeyPressed(KEY_RIGHT)) {
             snake.ChangeDirection(1, 0); // Thay đổi hướng sang phải
@@ -130,9 +130,9 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 
         snake.Move(GRID_COLS_SCREEN, GRID_ROWS_SCREEN,FrameCount,MEAT); // Di chuyển con rắn
         snake.Draw(); // Vẽ con rắn
-        snake.DrawScore();
         MEAT.Draw();
-
+        snake.DrawScore();
+        
         // Kiểm tra va chạm với thân mình
         if (snake.CheckSelfCollision()) {
             // Nếu có va chạm, kết thúc trò chơi

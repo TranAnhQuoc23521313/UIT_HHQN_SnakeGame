@@ -103,5 +103,5 @@ void Snake::DrawScore() {
     std::string scoreText = "Score: " + std::to_string(this->score);
     const char* scoreChar = scoreText.c_str(); // Chuyển đổi thành một con trỏ char
 
-    DrawText(scoreChar, this->SCC_WIDTH  - 150, 20, 20, BLACK);
+    DrawText(scoreChar, this->SCC_WIDTH  - 150, 20, 20, YELLOW);
 }

@@ -1,17 +1,14 @@
 ﻿  GamePlay.cpp
-  Snake.cpp
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(86,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(86,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(87,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(87,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(88,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(88,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(196,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(196,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(199,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(199,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SnakeGame.cpp
-  Generating Code...
-  SnakeGame.vcxproj -> C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\x64\Debug\SnakeGame.exe
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(86,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(86,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(87,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(87,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(88,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(88,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(196,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(196,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(199,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(199,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  SnakeGame.vcxproj -> E:\code game\UIT_HHQN_SnakeGame\SnakeGame\x64\Debug\SnakeGame.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
