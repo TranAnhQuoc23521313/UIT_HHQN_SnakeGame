@@ -1,2 +1,1 @@
 C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\x64\Debug\SnakeGame.vcxproj.CopyComplete
-E:\code game\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\x64\Debug\SnakeGame.vcxproj.Up2Date
