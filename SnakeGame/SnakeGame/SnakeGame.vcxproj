@@ -137,6 +137,12 @@
     <ClInclude Include="meat.h" />
     <ClInclude Include="Snake.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Slide1.png" />
+    <Image Include="Slide2.png" />
+    <Image Include="Slide3.png" />
+    <Image Include="snake-icon-png-4.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

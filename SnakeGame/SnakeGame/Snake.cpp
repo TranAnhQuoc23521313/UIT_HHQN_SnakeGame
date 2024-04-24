@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 
+
 Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDirX), dy(startDirY)
 {
     Point head = { startX, startY };
@@ -63,8 +64,6 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
         // Xoá phần cuối của con rắn
         body.pop_back();
     }
-
-   
 }
 
 void Snake::Draw()
@@ -74,6 +73,7 @@ void Snake::Draw()
         DrawRectangle(part.x * GRID_SIZE, part.y * GRID_SIZE, GRID_SIZE, GRID_SIZE, GREEN);
     }
 }
+
 
 void Snake::ChangeDirection(int newDx, int newDy)
 {

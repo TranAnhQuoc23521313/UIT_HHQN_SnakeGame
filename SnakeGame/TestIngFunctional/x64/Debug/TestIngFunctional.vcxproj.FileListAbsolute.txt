@@ -1,1 +1,0 @@
-C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\TestIngFunctional\x64\Debug\TestIngFunctional.vcxproj.CopyComplete

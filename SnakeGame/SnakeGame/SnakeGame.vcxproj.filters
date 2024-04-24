@@ -39,4 +39,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="snake-icon-png-4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Slide2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Slide1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Slide3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

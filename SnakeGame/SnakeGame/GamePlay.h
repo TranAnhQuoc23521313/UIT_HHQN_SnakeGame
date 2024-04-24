@@ -20,7 +20,6 @@ public:
 	static int score;
 	// Cụm các hàm dùng để thiết kế nút lệnh chọn chế độ trò chơi
 	void Choose_Mode_GamePlay();
-	void DrawChooseButtonMode();
 	int getSCR_WIDTH()
 	{
 		return this->SCR_WIDTH;
@@ -30,7 +29,6 @@ public:
 	void DrawGrid(int,int,int);
 	//void DrawScore();
 	void GameOver(int,int,int);
-
 	friend class Snake;
 };
 
