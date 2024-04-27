@@ -143,6 +143,11 @@
     <Image Include="Slide3.png" />
     <Image Include="snake-icon-png-4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="Death.mp3" />
+    <Media Include="EatMeat.mp3" />
+    <Media Include="ThemeMusic.mp3" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

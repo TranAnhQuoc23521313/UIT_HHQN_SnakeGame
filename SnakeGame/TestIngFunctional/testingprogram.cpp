@@ -31,19 +31,21 @@ int main(void) {
 
     SetTargetFPS(60);
     InitAudioDevice();
-
-    Sound fx = LoadSound("C:/Users/quoc9/Downloads/Blue Dream - Cheel.mp3");
-    //Sound fx = LoadSound("Recording.wav");
-
+    Music theme = LoadMusicStream("C:/Users/ABC/OneDrive/Desktop/NewStuff.mp3");
+    Sound fx = LoadSound("C:/Users/ABC/Downloads/AK47.mp3");
+    Sound th = LoadSound("C:/Users/ABC/Downloads/368476734_1479871569512143_8106116662697456924_n (online-video-cutter.com).mp3");
     SetTargetFPS(60);
+    PlaySound(th);
 
     while (!WindowShouldClose()) {
+        UpdateMusicStream(theme);
         if (IsKeyPressed(KEY_SPACE)) {
             // Phát âm thanh
             std::cout << "OK" << std::endl;
             PlaySound(fx);
         }
-
+        if (IsSoundPlaying(th) == false)
+            PlaySound(th);
         BeginDrawing();
         ClearBackground(RAYWHITE);
         DrawTexture(background, 0, 0, WHITE);
