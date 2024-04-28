@@ -113,7 +113,7 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     Snake snake(GRID_COLS_SCREEN / 2, GRID_ROWS_SCREEN / 2, 1, 0);
     snake.Set_SCR_WIDTH(SCREEN_WIDTH);
     meat MEAT(GRID_COLS_SCREEN, GRID_ROWS_SCREEN, snake.body);
-
+    snake.SetModeGame(this->ModeGame);
 
 
     while (!WindowShouldClose()) {

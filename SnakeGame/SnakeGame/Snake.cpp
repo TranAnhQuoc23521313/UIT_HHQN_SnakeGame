@@ -3,6 +3,7 @@
 #include"GamePlay.h"
 #include <vector>
 #include <string>
+#include <iostream>
 
 
 Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDirX), dy(startDirY)
@@ -14,6 +15,7 @@ Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDir
 
 void Snake::Move(int GRID_COLS, int GRID_ROWS, meat& MEAT)
 {
+    std::cout << "OK" << std::endl;
     // Lấy vị trí của phần đầu của con rắn
     Vector2 head = body[0];
 
@@ -23,6 +25,7 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, meat& MEAT)
     // Đặt lại vị trí mới nếu vượt ra khỏi biên
     if (this->MG == "Normal")
     {
+        
         if (newHead.x < 0)
         {
             newHead.x = GRID_COLS - 1;
