@@ -39,4 +39,29 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="snake-icon-png-4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Slide1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Slide3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Slide2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Death.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="EatMeat.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="ThemeMusic.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
 </Project>

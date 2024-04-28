@@ -19,6 +19,7 @@ GridSize currentGridSize = MEDIUM;
 
 int GamePlay::score = 0;
 
+// Hàm chọn chế độ chơi
 void GamePlay::Choose_Mode_GamePlay()
 {
     if (this->FirstGame)
@@ -60,22 +61,23 @@ void GamePlay::Choose_Mode_GamePlay()
         BeginDrawing();
         //ClearBackground(DARKBROWN);
         DrawTexture(background, 0, 0, WHITE);
-
-        if (CheckCollisionPointRec(GetMousePosition(), easyButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        if (CheckCollisionPointRec(GetMousePosition(), easyButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) 
         {
-            currentGridSize = SMALL;
-            this->buttonsVisible = false; // Ẩn các nút sau khi nút đã được nhấn
-            HEIGHT_GAME_SCREEN = 560;
-            WIDTH_GAME_SCREEN = 720;
-            break;
+             currentGridSize = SMALL;
+             this->buttonsVisible = false; // Ẩn các nút sau khi nút đã được nhấn
+             HEIGHT_GAME_SCREEN = 560;
+             WIDTH_GAME_SCREEN = 720;
+             this->ModeGame = "Normal";
+             break;
         }
-        else if (CheckCollisionPointRec(GetMousePosition(), hardcoreButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        else if (CheckCollisionPointRec(GetMousePosition(), hardcoreButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) 
         {
-            currentGridSize = MEDIUM;
-            this->buttonsVisible = false;
-            HEIGHT_GAME_SCREEN = 720;
-            WIDTH_GAME_SCREEN = 1280;
-            break;
+             currentGridSize = MEDIUM;
+             this->buttonsVisible = false;
+             HEIGHT_GAME_SCREEN = 720;
+             WIDTH_GAME_SCREEN = 1280;
+             this->ModeGame = "HardCore";
+             break;
         }
         EndDrawing();
     }
@@ -86,6 +88,7 @@ void GamePlay::Choose_Mode_GamePlay()
     return;
 }
 
+// Hàm chọn chơi chính ( điều khiển )
 void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 {
     SetWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -95,7 +98,13 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 
     int GRID_ROWS_SCREEN = SCREEN_HEIGHT / GRID_SIZE;
     int GRID_COLS_SCREEN = SCREEN_WIDTH / GRID_SIZE;
-    int FrameCount = 8;
+
+    SetTargetFPS(8);
+
+    InitAudioDevice();
+    Sound Theme_Game = LoadSound("ThemeMusic.mp3");
+    Sound Death = LoadSound("Death.mp3");
+    Sound Eat = LoadSound("EatMeat.mp3");
 
     SetWindowPosition((GetMonitorWidth(0) - SCREEN_WIDTH) / 2, (GetMonitorHeight(0) - SCREEN_HEIGHT) / 2);
 
@@ -108,9 +117,13 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
 
 
     while (!WindowShouldClose()) {
-        BeginDrawing();
+        if (IsSoundPlaying(Theme_Game) == false)
+        {
+            PlaySound(Theme_Game);
+        }
         ClearBackground(BLACK);
-        SetTargetFPS(snake.GetSpeed());
+        if (this->ModeGame == "HardCore")
+            SetTargetFPS(snake.GetSpeed());
         if (IsKeyPressed(KEY_RIGHT)) {
             snake.ChangeDirection(1, 0); // Thay đổi hướng sang phải
         }
@@ -124,7 +137,7 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
             snake.ChangeDirection(0, 1); // Thay đổi hướng xuống dưới
         }
 
-        snake.Move(GRID_COLS_SCREEN, GRID_ROWS_SCREEN, FrameCount, MEAT); // Di chuyển con rắn
+        snake.Move(GRID_COLS_SCREEN, GRID_ROWS_SCREEN,MEAT); // Di chuyển con rắn
         snake.Draw(); // Vẽ con rắn
         MEAT.Draw();
         snake.DrawScore();
@@ -132,6 +145,30 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
         // Kiểm tra va chạm với thân mình
         if (snake.CheckSelfCollision()) {
             // Nếu có va chạm, kết thúc trò chơi
+            PlaySound(Death);
+            UnloadSound(Theme_Game);
+            UnloadSound(Death);
+            UnloadSound(Eat);
+            CloseAudioDevice();
+            this->GameOver(snake.GetScore(), SCREEN_WIDTH, SCREEN_HEIGHT);
+            break;
+        }
+
+        // Nếu như con rắn ăn được thịt sẽ phát ra tiếng
+        if (snake.GetEat() == true)
+        {
+            PlaySound(Eat);
+            snake.SetEat(false);
+        }
+
+        // Ở chế độ khó nếu chạm biến thì sẽ thua
+        if (snake.GetLose() && this->ModeGame == "HardCore")
+        {
+            PlaySound(Death);
+            UnloadSound(Theme_Game);
+            UnloadSound(Death);
+            UnloadSound(Eat);
+            CloseAudioDevice();
             this->GameOver(snake.GetScore(), SCREEN_WIDTH, SCREEN_HEIGHT);
             break;
         }
@@ -145,11 +182,9 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
             MEAT.SetRandomPosition(GRID_COLS_SCREEN, GRID_ROWS_SCREEN, snake.body);
             MEAT.ResetExistenceTime();
         }
-
-
         EndDrawing();
     }
-
+    //CloseAudioDevice();
     CloseWindow();
 }
 
@@ -158,7 +193,9 @@ void GamePlay::setSCR_WIDTH(int SCREEN_WIDTH)
     this->SCR_WIDTH = SCREEN_WIDTH;
 }
 
-void GamePlay::GameOver(int Score, int OLD_MODE_WIDTH, int OLD_MODE_HEIGHT)
+
+// Hiển thị Giao diện GameOver khi thua
+void GamePlay::GameOver(int Score,int OLD_MODE_WIDTH, int OLD_MODE_HEIGHT)
 {
     int MODE = 0;
     SetWindowSize(CHOOSE_SCREEN_WIDTH, CHOOSE_SCREEN_HEIGHT);
@@ -182,10 +219,8 @@ void GamePlay::GameOver(int Score, int OLD_MODE_WIDTH, int OLD_MODE_HEIGHT)
         //ClearBackground(DARKGRAY);
         DrawTexture(background, 0, 0, WHITE);
 
-        std::string Result = "YOUR SCORE: " + std::to_string(Score);
-        const char* Score_Announce = Result.c_str();
-        DrawText(Score_Announce, 135 * 2, 100 * 2, 30 * 2, ORANGE);
-
+        this->DrawScore(Score);
+        
         if (CheckCollisionPointRec(GetMousePosition(), playAgain) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
             MODE = 1;
@@ -201,17 +236,34 @@ void GamePlay::GameOver(int Score, int OLD_MODE_WIDTH, int OLD_MODE_HEIGHT)
     }
     if (MODE == 1) // Chơi lại
     {
-
+        UnloadTexture(background);
         this->Start(OLD_MODE_WIDTH, OLD_MODE_HEIGHT);
     }
     if (MODE == 2) // Game mới
     {
         this->buttonsVisible = true;
         this->FirstGame = false;
+        UnloadTexture(background);
         this->Choose_Mode_GamePlay();
     }
     if (MODE == 0)
     {
         CloseWindow();
     }
+}
+
+
+// Vẽ điểm khi GameOver
+void GamePlay::DrawScore(int Score)
+{
+    std::string Result = std::to_string(Score);
+    const char* Score_Announce = Result.c_str();
+    if (Score == 0)
+        DrawText(Score_Announce, 270 * 2, 130 * 2, 60 * 2, BLACK);
+    else if (Score >= 10 && Score <= 90)
+        DrawText(Score_Announce, 250 * 2, 130 * 2, 60 * 2, BLACK);
+    else if (Score >= 100 && Score <= 990)
+        DrawText(Score_Announce, 235 * 2, 130 * 2, 60 * 2, BLACK);
+    else if (Score >= 1000)
+        DrawText(Score_Announce, 215 * 2, 130 * 2, 60 * 2, BLACK);
 }

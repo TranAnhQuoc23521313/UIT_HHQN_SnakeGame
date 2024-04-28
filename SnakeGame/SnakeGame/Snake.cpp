@@ -1,8 +1,9 @@
-﻿#include "Snake.h"
+#include "Snake.h"
 #include"meat.h"
 #include"GamePlay.h"
 #include <vector>
 #include <string>
+
 
 Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDirX), dy(startDirY)
 {
@@ -11,7 +12,7 @@ Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDir
     body.push_back(head);
 }
 
-void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
+void Snake::Move(int GRID_COLS, int GRID_ROWS, meat& MEAT)
 {
     // Lấy vị trí của phần đầu của con rắn
     Vector2 head = body[0];
@@ -20,28 +21,57 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
     Vector2 newHead = { head.x + dx, head.y + dy };
 
     // Đặt lại vị trí mới nếu vượt ra khỏi biên
-    if (newHead.x < 0)
+    if (this->MG == "Normal")
     {
-        newHead.x = GRID_COLS - 1;
-        //FrameCount++;
+        if (newHead.x < 0)
+        {
+            newHead.x = GRID_COLS - 1;
+            //FrameCount++;
+        }
+        if (newHead.y < 0)
+        {
+            newHead.y = GRID_ROWS - 1;
+            // FrameCount++;
+        }
+        if (newHead.x >= GRID_COLS)
+        {
+            newHead.x = 0;
+            // FrameCount++;
+        }
+        if (newHead.y >= GRID_ROWS)
+        {
+            newHead.y = 0;
+            // FrameCount++;
+        }
     }
-    if (newHead.y < 0)
+
+    if (this->MG == "HardCore")
     {
-        newHead.y = GRID_ROWS - 1;
-        // FrameCount++;
-    }
-    if (newHead.x >= GRID_COLS)
-    {
-        newHead.x = 0;
-        // FrameCount++;
-    }
-    if (newHead.y >= GRID_ROWS)
-    {
-        newHead.y = 0;
-        // FrameCount++;
+        if (newHead.x < 0)
+        {
+            this->Lose = true;
+            return;
+        }
+        if (newHead.y < 0)
+        {
+            this->Lose = true;
+            return;
+        }
+        if (newHead.x >= GRID_COLS)
+        {
+            this->Lose = true;
+            return;
+        }
+        if (newHead.y >= GRID_ROWS)
+        {
+            this->Lose = true;
+            return;
+        }
     }
 
     if (newHead.x == MEAT.GetPosition().x && newHead.y == MEAT.GetPosition().y) {
+        
+        bool UpSpead = true;
 
         // Thêm miếng thịt vào thân của con rắn
         body.insert(body.begin(), newHead);
@@ -49,9 +79,11 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
         MEAT.SetRandomPosition(GRID_COLS, GRID_ROWS, this->body);
         MEAT.ResetExistenceTime();
         this->score += 10;
-        if (this->score % 100 == 0)
+        this->Eat = true;
+        if (this->score % 100 == 0  && UpSpead)
         {
             this->Speed += 1;
+            UpSpead = false;
         }
         this->DrawScore();
     }
