@@ -6,7 +6,7 @@
 
 Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDirX), dy(startDirY)
 {
-    Point head = { startX, startY };
+    Vector2 head = { startX, startY };
     this->score = 0;
     body.push_back(head);
 }
@@ -14,10 +14,10 @@ Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDir
 void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
 {
     // Lấy vị trí của phần đầu của con rắn
-    Point head = body[0];
+    Vector2 head = body[0];
 
     // Tạo một vị trí mới dựa trên hướng di chuyển
-    Point newHead = { head.x + dx, head.y + dy };
+    Vector2 newHead = { head.x + dx, head.y + dy };
 
     // Đặt lại vị trí mới nếu vượt ra khỏi biên
     if (newHead.x < 0)
@@ -28,25 +28,25 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
     if (newHead.y < 0)
     {
         newHead.y = GRID_ROWS - 1;
-       // FrameCount++;
+        // FrameCount++;
     }
     if (newHead.x >= GRID_COLS)
     {
         newHead.x = 0;
-       // FrameCount++;
+        // FrameCount++;
     }
     if (newHead.y >= GRID_ROWS)
     {
         newHead.y = 0;
-       // FrameCount++;
+        // FrameCount++;
     }
 
     if (newHead.x == MEAT.GetPosition().x && newHead.y == MEAT.GetPosition().y) {
-        
+
         // Thêm miếng thịt vào thân của con rắn
         body.insert(body.begin(), newHead);
         // Tạo một miếng thịt mới
-        MEAT.SetRandomPosition(GRID_COLS, GRID_ROWS);
+        MEAT.SetRandomPosition(GRID_COLS, GRID_ROWS, this->body);
         MEAT.ResetExistenceTime();
         this->score += 10;
         if (this->score % 100 == 0)
@@ -55,25 +55,27 @@ void Snake::Move(int GRID_COLS, int GRID_ROWS, int& FrameCount, meat& MEAT)
         }
         this->DrawScore();
     }
-    
-    else 
+
+    else
     {   // Thêm vị trí mới vào phần đầu của con rắn
         body.insert(body.begin(), newHead);
 
         // Xoá phần cuối của con rắn
         body.pop_back();
     }
-
-   
 }
 
 void Snake::Draw()
 {
-    for (Point part : body)
+    for (unsigned int i = 0; i < body.size(); i++)
     {
-        DrawRectangle(part.x * GRID_SIZE, part.y * GRID_SIZE, GRID_SIZE, GRID_SIZE, GREEN);
+        float x = body[i].x;
+        float y = body[i].y;
+        Rectangle segment = Rectangle{ x * GRID_SIZE, y * GRID_SIZE, GRID_SIZE, GRID_SIZE };
+        DrawRectangleRounded(segment, 0.5, 5, DARKGRAY);
     }
 }
+
 
 void Snake::ChangeDirection(int newDx, int newDy)
 {
@@ -103,5 +105,5 @@ void Snake::DrawScore() {
     std::string scoreText = "Score: " + std::to_string(this->score);
     const char* scoreChar = scoreText.c_str(); // Chuyển đổi thành một con trỏ char
 
-    DrawText(scoreChar, this->SCC_WIDTH  - 150, 20, 20, YELLOW);
+    DrawText(scoreChar, this->SCC_WIDTH - 150, 20, 20, YELLOW);
 }
