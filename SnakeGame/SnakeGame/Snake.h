@@ -22,9 +22,8 @@ private:
 public:
 
     std::vector<Vector2> body;
-
     Snake(int, int, int, int);
-    void Move(int, int, int&, meat&);
+    void Move(int, int,meat&);
     void Draw();
     void ChangeDirection(int, int);
     bool CheckSelfCollision() const;
