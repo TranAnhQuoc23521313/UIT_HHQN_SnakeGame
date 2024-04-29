@@ -1,5 +1,0 @@
-﻿  main.cpp
-C:\Users\ABC\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\First\main.cpp(39,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  First.vcxproj -> C:\Users\ABC\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\x64\Debug\First.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.
