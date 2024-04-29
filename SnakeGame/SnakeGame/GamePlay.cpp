@@ -94,12 +94,8 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     SetWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 
-    SetTargetFPS(9);
-
     int GRID_ROWS_SCREEN = SCREEN_HEIGHT / GRID_SIZE;
     int GRID_COLS_SCREEN = SCREEN_WIDTH / GRID_SIZE;
-
-    SetTargetFPS(8);
 
     InitAudioDevice();
     Sound Theme_Game = LoadSound("ThemeMusic.mp3");
@@ -115,6 +111,8 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
     meat MEAT(GRID_COLS_SCREEN, GRID_ROWS_SCREEN, snake.body);
     snake.SetModeGame(this->ModeGame);
 
+    SetTargetFPS(snake.GetSpeed());
+
 
     while (!WindowShouldClose()) {
         if (IsSoundPlaying(Theme_Game) == false)
@@ -124,28 +122,33 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
         ClearBackground(BLACK);
         if (this->ModeGame == "HardCore")
             SetTargetFPS(snake.GetSpeed());
-        if (IsKeyPressed(KEY_RIGHT)) {
+        if (IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_D))
+        {
             snake.ChangeDirection(1, 0); // Thay đổi hướng sang phải
         }
-        else if (IsKeyPressed(KEY_LEFT)) {
+        else if (IsKeyPressed(KEY_LEFT) || IsKeyPressed(KEY_A))
+        {
             snake.ChangeDirection(-1, 0); // Thay đổi hướng sang trái
         }
-        else if (IsKeyPressed(KEY_UP)) {
+        else if (IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_W))
+        {
             snake.ChangeDirection(0, -1); // Thay đổi hướng lên trên
         }
-        else if (IsKeyPressed(KEY_DOWN)) {
+        else if (IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_S)) 
+        {
             snake.ChangeDirection(0, 1); // Thay đổi hướng xuống dưới
         }
 
         snake.Move(GRID_COLS_SCREEN, GRID_ROWS_SCREEN,MEAT); // Di chuyển con rắn
         snake.Draw(); // Vẽ con rắn
-        MEAT.Draw();
-        snake.DrawScore();
+        MEAT.Draw();    // Vẽ thịt
+        snake.DrawScore();  // Vẽ điểm
 
         // Kiểm tra va chạm với thân mình
-        if (snake.CheckSelfCollision()) {
+        if (snake.CheckSelfCollision()) 
+        {
             // Nếu có va chạm, kết thúc trò chơi
-            PlaySound(Death);
+            PlaySound(Death);   // Phát âm thanh khi ăn cắn vào thân mình
             UnloadSound(Theme_Game);
             UnloadSound(Death);
             UnloadSound(Eat);
@@ -157,14 +160,14 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
         // Nếu như con rắn ăn được thịt sẽ phát ra tiếng
         if (snake.GetEat() == true)
         {
-            PlaySound(Eat);
+            PlaySound(Eat); // Phát âm thanh khi ăn được thịt
             snake.SetEat(false);
         }
 
         // Ở chế độ khó nếu chạm biến thì sẽ thua
         if (snake.GetLose() && this->ModeGame == "HardCore")
         {
-            PlaySound(Death);
+            PlaySound(Death);   // Phát âm thanh khi thua ( chế độ khó )
             UnloadSound(Theme_Game);
             UnloadSound(Death);
             UnloadSound(Eat);

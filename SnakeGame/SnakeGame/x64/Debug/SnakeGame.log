@@ -1,4 +1,13 @@
 ﻿  GamePlay.cpp
+  Snake.cpp
+C:\Users\ABC\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(10,22): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\ABC\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(10,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\ABC\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(10,30): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\ABC\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(10,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\ABC\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(29,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\ABC\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(34,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  SnakeGame.cpp
+  Generating Code...
   SnakeGame.vcxproj -> C:\Users\ABC\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\x64\Debug\SnakeGame.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

@@ -3,7 +3,6 @@
 #include"GamePlay.h"
 #include <vector>
 #include <string>
-#include <iostream>
 
 
 Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDirX), dy(startDirY)
@@ -15,7 +14,6 @@ Snake::Snake(int startX, int startY, int startDirX, int startDirY) : dx(startDir
 
 void Snake::Move(int GRID_COLS, int GRID_ROWS, meat& MEAT)
 {
-    std::cout << "OK" << std::endl;
     // Lấy vị trí của phần đầu của con rắn
     Vector2 head = body[0];
 
@@ -107,7 +105,7 @@ void Snake::Draw()
         float x = body[i].x;
         float y = body[i].y;
         Rectangle segment = Rectangle{ x * GRID_SIZE, y * GRID_SIZE, GRID_SIZE, GRID_SIZE };
-        DrawRectangleRounded(segment, 0.5, 5, DARKGRAY);
+        DrawRectangleRounded(segment, 0.5, 5, GREEN);
     }
 }
 
