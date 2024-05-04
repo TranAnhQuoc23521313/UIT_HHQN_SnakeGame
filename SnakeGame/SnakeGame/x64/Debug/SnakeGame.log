@@ -1,1 +1,19 @@
-﻿
+﻿  GamePlay.cpp
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\GamePlay.cpp(209,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  meat.cpp
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\meat.cpp(13,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\meat.cpp(14,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\meat.cpp(19,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\meat.cpp(19,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Snake.cpp
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(10,22): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(10,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(10,30): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(10,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(29,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\SnakeGame\Snake.cpp(34,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  SnakeGame.cpp
+  Generating Code...
+  SnakeGame.vcxproj -> C:\Users\quoc9\OneDrive\Documents\GitHub\UIT_HHQN_SnakeGame\SnakeGame\x64\Debug\SnakeGame.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
