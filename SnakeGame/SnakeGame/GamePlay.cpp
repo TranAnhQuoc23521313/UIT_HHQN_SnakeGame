@@ -34,7 +34,7 @@ void GamePlay::Choose_Mode_GamePlay()
     SetWindowPosition(windowX, windowY); // Đặt vị trí của cửa sổ
 
     // Load ảnh icon từ tệp ảnh
-    Image icon = LoadImage("snake-icon-png-4.png");
+    Image icon = LoadImage("snake_icon.png");
 
     // Thiết lập icon cho cửa sổ của ứng dụng
     SetWindowIcon(icon);
@@ -65,7 +65,7 @@ void GamePlay::Choose_Mode_GamePlay()
         {
              currentGridSize = SMALL;
              this->buttonsVisible = false; // Ẩn các nút sau khi nút đã được nhấn
-             HEIGHT_GAME_SCREEN = 560;
+             HEIGHT_GAME_SCREEN = 570;
              WIDTH_GAME_SCREEN = 720;
              this->ModeGame = "Normal";
              break;
@@ -188,7 +188,7 @@ void GamePlay::Start(int SCREEN_WIDTH, int SCREEN_HEIGHT)
         EndDrawing();
     }
     //CloseAudioDevice();
-    CloseWindow();
+    //CloseWindow();
 }
 
 void GamePlay::setSCR_WIDTH(int SCREEN_WIDTH)
@@ -203,6 +203,11 @@ void GamePlay::GameOver(int Score,int OLD_MODE_WIDTH, int OLD_MODE_HEIGHT)
     int MODE = 0;
     SetWindowSize(CHOOSE_SCREEN_WIDTH, CHOOSE_SCREEN_HEIGHT);
     SetWindowPosition((GetMonitorWidth(0) - CHOOSE_SCREEN_WIDTH) / 2, (GetMonitorHeight(0) - CHOOSE_SCREEN_HEIGHT) / 2);
+
+    InitAudioDevice();
+    Sound LoseGame = LoadSound("losegame.mp3");
+    SetSoundVolume(LoseGame, 0.7);
+    PlaySound(LoseGame);
 
     // Load ảnh từ tệp ảnh
     Image image = LoadImage("Slide3.png");
@@ -237,6 +242,8 @@ void GamePlay::GameOver(int Score,int OLD_MODE_WIDTH, int OLD_MODE_HEIGHT)
 
         EndDrawing();
     }
+    UnloadSound(LoseGame);
+    CloseAudioDevice();
     if (MODE == 1) // Chơi lại
     {
         UnloadTexture(background);
@@ -249,10 +256,10 @@ void GamePlay::GameOver(int Score,int OLD_MODE_WIDTH, int OLD_MODE_HEIGHT)
         UnloadTexture(background);
         this->Choose_Mode_GamePlay();
     }
-    if (MODE == 0)
+    /*if (MODE == 0)
     {
         CloseWindow();
-    }
+    }*/
 }
 
 

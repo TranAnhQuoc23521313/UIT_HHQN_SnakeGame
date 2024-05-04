@@ -141,11 +141,12 @@
     <Image Include="Slide1.png" />
     <Image Include="Slide2.png" />
     <Image Include="Slide3.png" />
-    <Image Include="snake-icon-png-4.png" />
+    <Image Include="snake_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="Death.mp3" />
     <Media Include="EatMeat.mp3" />
+    <Media Include="losegame.mp3" />
     <Media Include="ThemeMusic.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
